@@ -1,0 +1,16 @@
+[
+{
+  "modid": "ostuff",
+  "name": "OStuff",
+  "description": "oriont's random stuff.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["oriont"],
+  "credits": "oriont for making the mod",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

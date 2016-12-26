@@ -1,0 +1,8 @@
+#English US Language file for OStuff Mod
+
+#Creative Tabs
+itemGroup.tab_ostuff=OStuff
+
+#Items
+item.test_item.name=Test Item
+tile.test_block.name=Test Block
