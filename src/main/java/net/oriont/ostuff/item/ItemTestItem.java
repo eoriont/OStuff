@@ -1,6 +1,7 @@
 package net.oriont.ostuff.item;
 
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -16,6 +17,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
 import net.oriont.ostuff.OStuff;
+import net.oriont.ostuff.block.ModBlocks;
+import net.oriont.ostuff.client.gui.GuiOStuff;
+
 import java.util.List;
 
 public class ItemTestItem extends ItemSword {
@@ -29,14 +33,18 @@ public class ItemTestItem extends ItemSword {
 
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
-        //playerIn.sendMessage(new TextComponentString("Right Clicked"));
+        if(!worldIn.isRemote) {
+            //playerIn.sendMessage(new TextComponentString("Right Clicked"));
+        } else {
+            //Minecraft.getMinecraft().displayGuiScreen(new GuiOStuff());
+        }
         return super.onItemRightClick(worldIn, playerIn, handIn);
     }
 
     @Override
     public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
         //if (worldIn.getBlockState(pos).getBlock() == Blocks.GRASS) {
-            worldIn.setBlockState(pos, Blocks.DIAMOND_BLOCK.getDefaultState());
+            worldIn.setBlockState(pos, ModBlocks.test.getDefaultState());
             //return EnumActionResult.SUCCESS;
         //}
 

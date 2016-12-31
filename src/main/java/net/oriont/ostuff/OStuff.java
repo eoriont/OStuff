@@ -1,6 +1,7 @@
 package net.oriont.ostuff;
 
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -40,6 +41,7 @@ public class OStuff {
 
     @EventHandler
     public void postInit(FMLPostInitializationEvent e) {
+        MinecraftForge.EVENT_BUS.register(new OStuffEventHandler());
         proxy.postInit(e);
     }
 }
